@@ -10,3 +10,4 @@ path = "src/main.rs"
 [dependencies]
 postgres = "0.15.2"
 reqwest = "0.9.4"
+scraper = "0.8.1"
