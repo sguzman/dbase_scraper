@@ -58,6 +58,9 @@ pub fn channels(i: u64) -> Vec<String> {
     for element in doc.select(&selector) {
         let value: &str = element.value().attr("href").unwrap();
         let value: String = value.to_string();
+        let value: Vec<&str> = value.split("/").collect::<Vec<&str>>();
+        let value: String = value[2].to_string();
+
         vec.push(value);
     }
 

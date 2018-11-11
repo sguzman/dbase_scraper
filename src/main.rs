@@ -1,7 +1,11 @@
+extern crate postgres;
+extern crate rand;
 extern crate reqwest;
 extern crate scraper;
 
 mod http;
+mod sql;
+mod util;
 
 fn main() {
     loop {
@@ -14,9 +18,7 @@ fn main() {
 
         for i in 1..m {
             let vec: Vec<String> = http::channels(i);
-            for c in vec {
-                println!("{}", c);
-            }
+            sql::insert(vec);
         }
     }
 }
