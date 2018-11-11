@@ -1,3 +1,4 @@
+# docker.io/guzmansalv/youtube_dbase_scraper
 FROM liuchong/rustup:musl AS base
 RUN mkdir app
 WORKDIR ./app
@@ -6,7 +7,7 @@ COPY ./Cargo.lock ./Cargo.lock
 COPY ./Cargo.toml ./Cargo.toml
 
 RUN rustup target add x86_64-unknown-linux-musl
-RUN rustup install nightly
+#RUN rustup install nightly
 RUN cargo install cargo-build-deps --verbose --color always
 RUN cargo build-deps --release
 
