@@ -15,7 +15,7 @@ ADD src src
 ARG name=dbase-scraper
 RUN cargo build --package $name --bin $name --verbose --jobs 2 --all-features --release --target=x86_64-unknown-linux-musl --color always
 
-FROM alpine
+FROM scratch
 COPY --from=base /root/app/target/x86_64-unknown-linux-musl/release/dbase-scraper /main
 COPY --from=base /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 
