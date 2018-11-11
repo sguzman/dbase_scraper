@@ -26,5 +26,5 @@ pub fn page_count() -> Option<u64> {
     let num: String = href.chars().skip(n).collect();
     let real_num: u64 = num.parse::<u64>().unwrap();
 
-    return real_num;
+    return Some(real_num);
 }
