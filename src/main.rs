@@ -8,6 +8,7 @@ mod sql;
 mod util;
 
 fn main() {
+    println!("start");
     loop {
         let n: Option<u64> = http::page_count();
         if n.is_none() {
